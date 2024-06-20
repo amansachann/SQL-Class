@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Example App</title>
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+   <%- include('partials/navbar') %>
+
+    <!-- Content -->
+     <section class="my-4 py-4">
+      <div class="container">
+        <h1>Total number of users: <span class="text-success"><%= count %></span></h1>
+        <button class="btn btn-danger my-2 px-4 fs-5">Join us today!</button>
+      </div>
+     </section>
+    <!-- Content ends -->
+    <%- include('partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Example App</title>
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <!-- Content -->
+    <section>
+      <div class="container my-4 w-50">
+        <h1>Edit User</h1>
+        <form class="my-3" method="post" action="/user/<%= userDetails["id"] %>?_method=PATCH">
+            <!-- ID -->
+          <div class="mb-3">
+            <label for="userid" name="userid" class="form-label"
+              >User ID</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="userid"
+              name="userid"
+                placeholder="User ID"
+                value=<%= userDetails["id"] %>
+            />
+          </div>
+            <!-- Username -->
+          <div class="mb-3">
+            <label for="username" name="username" class="form-label"
+              >Username</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+                placeholder="Username"
+                value=<%= userDetails["username"] %>
+            />
+          </div>
+            <!-- Email Address -->
+          <div class="mb-3">
+            <label for="useremail"
+            name="useremail" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="useremail"
+              name="useremail"
+              aria-describedby="emailHelp"
+              placeholder="E-mail"
+              value=<%= userDetails["email"] %>
+            />
+          </div>
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="userpassword" name="userpassword" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="userpassword"
+              name="userpassword"
+                placeholder="Enter Password"
+            />
+            <div id="passwordHelp" class="form-text">
+                We'll never share your password with anyone else.
+              </div>
+          </div>
+          <!-- Submit Button -->
+          <a href="/user"><button type="button" class="btn btn-danger px-3 me-2">Back</button></a>
+          <button type="submit" class="btn btn-success px-3">Submit</button>
+        </form>
+      </div>
+    </section>
+    <!-- Content ends -->
+    <%- include('partials/footer') %>
+  </body>
+</html>

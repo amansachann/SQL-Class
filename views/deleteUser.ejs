@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <%- include("partials/head.ejs") %>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+    <!-- Content -->
+    <section>
+        <div class="container my-4 w-50">
+          <h1>Delete User</h1>
+          <h4 class="text-secondary">Are you sure, you want to delete this user?</h4>
+          <form class="my-3" method="post" action="/user/<%= userDetails["id"] %>?_method=DELETE">
+              <!-- ID -->
+            <div class="mb-3">
+              <label for="userid" name="userid" class="form-label"
+                >User ID</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="userid"
+                name="userid"
+                  placeholder="User ID"
+                  value=<%= userDetails["id"] %>
+                disabled
+              />
+            </div>
+              <!-- Username -->
+            <div class="mb-3">
+              <label for="username" name="username" class="form-label"
+                >Username</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                  placeholder="Username"
+                  value=<%= userDetails["username"] %>
+                  disabled
+              />
+            </div>
+              <!-- Email Address -->
+            <div class="mb-3">
+              <label for="useremail"
+              name="useremail" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="useremail"
+                name="useremail"
+                aria-describedby="emailHelp"
+                placeholder="E-mail"
+                value=<%= userDetails["email"] %>
+                disabled
+              />
+            </div>
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="userpassword" name="userpassword" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="userpassword"
+                name="userpassword"
+                  placeholder="Enter Password"
+              />
+              <div id="passwordHelp" class="form-text">
+                  Enter your password to confirm
+                </div>
+            </div>
+            <!-- Submit Button -->
+            <a href="/user"><button type="button" class="btn btn-dark px-3 me-2">Back</button></a>
+            <button type="submit" class="btn btn-danger px-3">Delete</button>
+          </form>
+        </div>
+      </section>
+      <!-- Content ends -->
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
